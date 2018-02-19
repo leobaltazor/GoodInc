@@ -1,38 +1,13 @@
+@import "vars"
 @import "fonts"
 @import "libs"
-@import "vars"
 
-*
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-	&:before, &:after
-		-webkit-box-sizing: border-box
-		-moz-box-sizing: border-box
-		box-sizing: border-box
+::placeholder
+	color: #666
 
-*::-webkit-input-placeholder
-	color: #666
-	opacity: 1
-
-*:-moz-placeholder
-	color: #666
-	opacity: 1
-
-*::-moz-placeholder
-	color: #666
-	opacity: 1
-
-*:-ms-input-placeholder
-	color: #666
-	opacity: 1
-
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
+::selection
+	background-color: $accent
+	color: #fff
 
 html, body
 	height: 100%
@@ -44,7 +19,13 @@ body
 	line-height: 1.65
 	font-family: $default-font
 	overflow-x: hidden
-	background-color: #ebebeb
+	input, textarea
+			border: #666 1px solid
+			outline: none
+			&:focus:required:invalid
+				border-color: red
+			&:required:valid
+				border-color: green
 
 .img-responsive
 	display: block
@@ -54,9 +35,9 @@ body
 .text-center
 	text-align: center
 
-::selection
-	background-color: $accent
-	color: #fff
+/*Выполнение Задания*/
+body 
+	background-color: #ebebeb
 
 .top_line
 	background-color: #373737
@@ -70,11 +51,242 @@ body
 	text-align: center
 	color: #fff
 	font-size: 36px
-
+	position: relative
+	float: left
+	&::after
+		content: " "
+		position: absolute
+		top: 20px
+		right: -11px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 12.5px 0 12.5px 12px
+		border-color: transparent transparent transparent $accent
 .top_logo
 	color: #fff
+	float: left
+	margin-left: 20px
+	line-height: 64px
+	font-size: 18px
+	
+.top_mnu
+	font-family: Arial
+	font-size: 12px
+	height: 69px
+	background-color: #474747
+	& ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+	& li
+		display: inline-block
+		position: relative
+		&:first-of-type
+			margin-left: 25px
+		&:after
+			content: ''
+			position: absolute
+			width: 1px
+			height: 11px
+			right: 0
+			top: 42%
+			background-color: #767676
+		&:last-of-type:after
+			background-color: transparent
+		&.activ
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				background-color:  #f26c4f
+				width: 50%
+				height: 4px
+				bottom: 0px
+				left: 25%
+	& a
+		line-height: 69px
+		color: #fff
+		padding: 30px 15px
 
+.top_contact
+	font-size: 10px
+	font-family: Arial
+	.form_wrapper
+		color: #959595
+	& .input
+		width: 100%		
+		box-sizing: border-box
+		border: none
+		font-weight: bold
+		padding: 15px 42px 15px 20px
+		margin: 15px 0 10px
 
+	& .submit
+		position: absolute
+		top: 24px
+		right: 30px
+		background-image: url(http://localhost:3000/img/clock.png)
+		background-position: top left
+		background-repeat: no-repeat
+		width: 23px
+		height: 23px
+		border: none
+		background-color: transparent
 
+.contact
+	color: #8f8f8f
+	display: flex
+	justify-content: space-between
+	height: 70px
+	align-items: center
+	div
+		display: inline-block
+	.twit
+		padding: 0 5px 0 15px
+		background: url(../img/twitter.svg) 0 50% no-repeat
+	.fb
+		padding: 0 5px 0 10px
+		background: url(../img/fb.svg) 0 50% no-repeat
+	.rsss
+		padding: 0 5px 0 15px
+		background: url(../img/rss.svg) 0 50% no-repeat
+	.maill
+		padding: 0 5px 0 20px
+		background: url(../img/mail.svg) 0 50% no-repeat
+	a
+		color: inherit
 
-@import "media" // Всегда в конце
+.featur
+	.wq
+		background-color: #373737
+
+	img
+		width: 100%
+		height: 100%
+
+	span
+		position: absolute
+		padding: 24px 30px
+		background: rgba(0, 0, 0, 0.5)
+		font-size: 16px
+		bottom: 5px
+		right: 0px
+		color: #fff
+		width: 60%
+		box-shadow: 0px 1px 1px 0px #000000;
+	.text-pre
+		color: #a7a7a7
+		font-family: Arial
+		font-size: 12px
+		line-height: 23px
+		width: 220px
+		margin: 0 auto
+		&:before
+			content: ""
+			width: 9px
+			background-color: #f26c4f
+			height: 100%
+			position: absolute
+			left: -1px
+			top: 0
+		&:after
+			content: ""
+			position: absolute
+			left: -0px
+			top: 40px
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 16px 0 16px 22px;
+			border-color: transparent transparent transparent #f26d4f;
+		.time
+			float: right
+			position: relative
+			&:after
+				content: ' '
+				position: absolute
+				left: -23px
+				width: 100%
+				height: 100%
+				background: url(../img/clock-gray.svg) no-repeat
+
+		h2
+			margin-top: 45px
+			margin-bottom: 17px
+			line-height: 24px
+			color: #fff
+			font-size: 19px
+			font-weight: 700
+			font-family: Arial
+
+.sli
+	margin-top: 15px
+	.slide
+		width: 300px
+		margin: 0 auto
+		height: 100%
+		background-color: #fff
+	h3
+		color: #4f4f4f
+		font-size: 25px
+		line-height: 31px
+		font-weight: 700
+		margin: 24px 28px 26px
+	.description
+		color: #646464
+		font-size: 12px
+		line-height: 24px
+		font-weight: 400
+		margin: 0px 28px 56px
+img
+	width: 300px
+	height: 189px
+	&:after
+		content: ""
+		width: 0px
+		height: 0px
+		border-style: solid
+		border-width: 0 79px 79px 0
+		border-color: transparent #f26d4f transparent transparent
+
+.row
+	width: 942px
+	margin: 0 auto
+
+// Example styles Start
+.example-bs
+	padding: $grid-gutter-width/2
+	// min-height: 100vh
+	h3
+		margin-bottom: 20px
+	.row
+		text-align: center
+		> .col, > [class^=col-]
+			padding:
+				top: .75rem
+				bottom: .75rem
+			background-color: $dark
+			border: 1px solid darken($dark, 10%)
+			color: #fff
+	[class^="row align-items-"], &.example-flex .row+.row
+		min-height: 10rem
+		background-color: #a3a8ba
+		margin: $grid-gutter-width/2 0
+	.no-gutters
+		> .col, > [class^=col-]
+			border: none
+			background-color: transparent
+			padding:
+				top: 0
+				bottom: 0
+			div
+				background-color: $dark
+				padding:
+					top: .75rem
+					bottom: .75rem
+			&:nth-child(odd)
+				div
+					background-color: lighten($dark, 10%)
+
+@import "media" // Always at the end

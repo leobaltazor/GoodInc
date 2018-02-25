@@ -239,54 +239,183 @@ body
 		line-height: 24px
 		font-weight: 400
 		margin: 0px 28px 56px
-img
-	width: 300px
-	height: 189px
-	&:after
-		content: ""
-		width: 0px
-		height: 0px
-		border-style: solid
-		border-width: 0 79px 79px 0
-		border-color: transparent #f26d4f transparent transparent
+	img
+		width: 300px
+		height: 189px
+		object-fit: cover
 
+	.imgg
+		width: 300px
+		height: 189px
+		&:before
+			content: ""
+			right: 7px
+			z-index: 999
+			top: 0
+			position: absolute
+			border-style: solid
+			border-width: 0 79px 79px 0
+			border-color: transparent #f26d4f transparent transparent
+		&:after
+			content: ""
+			z-index: 999
+			position: absolute
+			top: 21px
+			width: 15px
+			height: 15px
+			right: 21px
+			background: url(../img/+.png) no-repeat
+.section-3
+	margin-top: 20px
+	.bg
+		background-color: #fff
+		padding: 36px 40px 40px
+		position: relative
+		margin-bottom: 13px
+		&:before
+			content: ""
+			position: absolute
+			left: 0 
+			top: 0
+			background-color:  #f26c4f;
+			width: 4px;
+			height: 100%;
+		.art
+			h3
+				font-family: Arial
+				color:  #474747
+				font-size: 24px
+				font-weight: 700
+				letter-spacing: -0.24px
+				line-height: 36px
+				text-align: left
+				text-shadow: 0px 1px 0px #ffffff
+			ul
+				display: flex
+				list-style-type: none
+				margin: 0
+				padding: 0
+				li
+					font-family: Tahoma
+					color:  #8f8f8f
+					font-size: 10px
+					font-weight: 400
+					letter-spacing: 0.1px
+					line-height: 21px
+					text-align: left
+					text-shadow: 0px 1px 0px #ffffff
+					border-right: 1px solid #dfdfdf
+					padding: 0 30px 0
+					margin-bottom: 21px
+					&:last-of-type
+						border: none
+						padding: 0 20px 0
+					&:first-of-type
+						padding-left: 2px
+			p
+				font-family: Arial
+				color:  #707070
+				font-size: 14px
+				font-weight: 400
+				line-height: 21px
+				text-align: left
+				text-shadow: 0px 1px 0px #ffffff
+			&-star
+				position: relative
+				&:after
+				content: " "
+				// position: absolute
+				padding: 0 55px 0 0
+				margin-right: 15px
+				background: url(../img/star.svg) 0 50%
+.Side-feature
+	background-color:  #373737;
+	box-shadow: 0px 1px 0px 0px #d3d3d3;
+	width: 300px;
+	position: relative
+	h4
+		font-family: Arial;
+		color:  #ffffff;
+		font-size: 25px;
+		font-weight: 700;
+		line-height: 31px;
+		text-align: left;
+		padding: 30px 30px 26px
+	p
+		font-family: Arial;
+		color:  #ffffff;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 24px;
+		text-align: left;
+		padding: 0 30px 50px
+	img
+		width: 100%
+		height: 294px
+		object-fit: cover
+	.imgg
+		// width: 300px
+		// height: 189px
+		&:before
+			content: ""
+			right: 0px
+			z-index: 998
+			top: 0
+			position: absolute
+			border-style: solid
+			border-width: 0 79px 79px 0
+			border-color: transparent #f26d4f transparent transparent
+		&:after
+			content: ""
+			z-index: 999
+			position: absolute
+			top: 21px
+			width: 15px
+			height: 15px
+			right: 15px
+			background: url(../img/+.png) no-repeat
+
+
+
+
+		
 .row
 	width: 942px
-	margin: 0 auto
+	// margin: 0 auto
 
 // Example styles Start
-.example-bs
-	padding: $grid-gutter-width/2
-	// min-height: 100vh
-	h3
-		margin-bottom: 20px
-	.row
-		text-align: center
-		> .col, > [class^=col-]
-			padding:
-				top: .75rem
-				bottom: .75rem
-			background-color: $dark
-			border: 1px solid darken($dark, 10%)
-			color: #fff
-	[class^="row align-items-"], &.example-flex .row+.row
-		min-height: 10rem
-		background-color: #a3a8ba
-		margin: $grid-gutter-width/2 0
-	.no-gutters
-		> .col, > [class^=col-]
-			border: none
-			background-color: transparent
-			padding:
-				top: 0
-				bottom: 0
-			div
-				background-color: $dark
-				padding:
-					top: .75rem
-					bottom: .75rem
-			&:nth-child(odd)
-				div
-					background-color: lighten($dark, 10%)
+// .example-bs
+// 	padding: $grid-gutter-width/2
+// 	// min-height: 100vh
+// 	h3
+// 		margin-bottom: 20px
+// 	.row
+// 		text-align: center
+// 		> .col, > [class^=col-]
+// 			padding:
+// 				top: .75rem
+// 				bottom: .75rem
+// 			background-color: $dark
+// 			border: 1px solid darken($dark, 10%)
+// 			color: #fff
+// 	[class^="row align-items-"], &.example-flex .row+.row
+// 		min-height: 10rem
+// 		background-color: #a3a8ba
+// 		margin: $grid-gutter-width/2 0
+// 	.no-gutters
+// 		> .col, > [class^=col-]
+// 			border: none
+// 			background-color: transparent
+// 			padding:
+// 				top: 0
+// 				bottom: 0
+// 			div
+// 				background-color: $dark
+// 				padding:
+// 					top: .75rem
+// 					bottom: .75rem
+// 			&:nth-child(odd)
+// 				div
+// 					background-color: lighten($dark, 10%)
 
 @import "media" // Always at the end
